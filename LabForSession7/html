@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS3 Extra Exercise Menu</title>
+<style>
+  
+    width: 250px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+ 
+  .menu-title {
+    font-size: 24px;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    
+    background: linear-gradient(45deg, #ff6b6b, #c0392b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+ 
+  .menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  .menu-list li {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+  }
+
+  
+  .menu-list li::before {
+    content: "\2022"; 
+    color: #c0392b;  
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;     
+  }
+  
+  .menu-list li:hover {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+  <h2 class="menu-title">Main Menu</h2>
+  <ul class="menu-list">
+    <li>Home Page</li>
+    <li>Our Products</li>
+    <li>Services</li>
+    <li>Contact Us</li>
+  </ul>
+</div>
+
+</body>
+</html>

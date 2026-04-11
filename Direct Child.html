@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>direct-child.html</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 22px;
+        }
+        div > span {
+         background: DodgerBlue;
+          }
+        span { background: #fff; }
+     </style>
+    <body>
+       <div>
+         <span>Span #1, in the div.
+            <span>Span #2, in the span that's…</span>
+         </span>
+       </div>
+     <span>Span #3, not in the div at all.</span>
+       </div> 
+</body>    
+</html>
