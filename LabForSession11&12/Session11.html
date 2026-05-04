@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator using Regex and Eval</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        table { margin: 0 auto; border-collapse: collapse; }
+        td { padding: 5px; }
+        .error { color: red; font-size: 14px; font-weight: bold; }
+    </style>
+    <script>
+        function calculateResult() {
+            // Lấy giá trị từ form
+            var num1 = document.calcForm.num1.value;
+            var num2 = document.calcForm.num2.value;
+            var operator = document.calcForm.operator.value;
+            var resultBox = document.calcForm.result;
+            var errorMsg = document.getElementById("errorMsg");
+
+            // Xóa thông báo lỗi và kết quả cũ
+            errorMsg.innerHTML = "";
+            resultBox.value = "";
+
+            
+            var numRegex = /^-?\d+(\.\d+)?$/; 
+            
+            var opRegex = /^[+\-*/%]$/;
+
+            // 2. Validate đầu vào
+            if (!numRegex.test(num1) || !numRegex.test(num2)) {
+                errorMsg.innerHTML = "Lỗi: Vui lòng nhập số hợp lệ vào cả hai ô.";
+                return;
+            }
+            if (!opRegex.test(operator)) {
+                errorMsg.innerHTML = "Lỗi: Toán tử chỉ được là +, -, *, / hoặc %.";
+                return;
+            }
+
+           
+            var expression = num1 + " " + operator + " " + num2;
+
+            
+            try {
+                
+                var finalResult = eval(expression); 
+                
+                
+                if (!isFinite(finalResult)) {
+                    errorMsg.innerHTML = "Lỗi: Không thể chia cho 0.";
+                    return;
+                }
+
+                
+                resultBox.value = finalResult;
+            } catch (e) {
+                errorMsg.innerHTML = "Lỗi hệ thống trong quá trình tính toán.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>CALCULATOR</h2>
+    <form name="calcForm" onsubmit="event.preventDefault(); calculateResult();">
+        <table>
+            <tr>
+                <td align="right">Number 1:</td>
+                <td><input type="text" name="num1" size="10" /></td>
+            </tr>
+            <tr>
+                <td align="right">Operator (+, -, *, /, %):</td>
+                <td><input type="text" name="operator" size="5" /></td>
+            </tr>
+            <tr>
+                <td align="right">Number 2:</td>
+                <td><input type="text" name="num2" size="10" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Calculate</button>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><strong>Result:</strong></td>
+                <td><input type="text" name="result" readonly style="background-color: #eee;" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <div id="errorMsg" class="error"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Circle Calculator</title>
+</head>
+<body>
+    <h2>Circle Calculator</h2>
+    Radius: <input type="number" id="radius" value="0"><br><br>
+    <button onclick="calculateCircle()">Calculate</button>
+    <p id="circle-result"></p>
+
+    <script>
+        function calculateCircle() {
+            let r = parseFloat(document.getElementById('radius').value);
+            if (isNaN(r) || r < 0) {
+                document.getElementById('circle-result').innerText = "Please enter a valid positive number.";
+                return;
+            }
+            const pi = 3.14; // Bắt buộc dùng 3.14 theo đề bài
+            let perimeter = 2 * pi * r;
+            let area = pi * r * r;
+            document.getElementById('circle-result').innerText = `Perimeter: ${perimeter.toFixed(2)} | Area: ${area.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons
+    </title>
+</head> 
+  <style>
+    .yellowbutton {
+    background-color: yellow;
+    }
+    .greenbutton {
+    background-color: green;
+    }
+  </style>
+  <body>
+    <p>Adult Plain Cotton T-shirt
+      <br> Price: $7.99
+    </p>
+    <button class="yellowbutton">Add to cart</button>
+    <button class="greenbutton">Buy now</button>
+    <script>
+      document.querySelector('.yellowbutton').addEventListener('click', function() {
+        alert('Added');
+      });
+      document.querySelector('.greenbutton').addEventListener('click', function() {
+        console.log ('Loading...');
+        alert('Purchased');
+      });
+    </script>
+  </body>
+</html>

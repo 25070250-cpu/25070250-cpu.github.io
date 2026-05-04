@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        color: #333;
+    }
+    .form-container {
+        width: 600px;
+        margin: 20px auto;
+    }
+    .form-row {
+        display: flex;
+        margin-bottom: 8px;
+        align-items: center;
+    }
+    .form-label {
+        width: 140px;
+        color: #4a6b8c; 
+        font-weight: bold;
+    }
+    .form-input {
+        flex: 1;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #a0a0a0;
+        margin: 15px 0;
+    }
+    input[type="text"], input[type="password"] {
+        width: 220px;
+        padding: 3px;
+        border: 1px solid #ccc;
+    }
+    .name-row .form-input {
+        display: flex;
+        align-items: center;
+    }
+    .name-row input[type="text"] {
+        width: 140px;
+    }
+    .last-name-label {
+        color: #4a6b8c;
+        font-weight: bold;
+        margin: 0 10px 0 20px;
+    }
+    .birthday-inputs input[type="text"] {
+        width: 40px;
+    }
+    .birthday-inputs {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: 200px 200px;
+        gap: 5px;
+    }
+    .checkbox-group label {
+        color: #4a6b8c;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+    .checkbox-group input {
+        margin-right: 8px;
+    }
+    .align-top {
+        align-items: flex-start;
+    }
+    .submit-btn {
+        background: linear-gradient(to bottom, #d63333, #8a0000);
+        color: white;
+        border: 2px solid #5c0000;
+        border-radius: 12px;
+        padding: 5px 25px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <form action="#" method="POST">
+        <!-- Khối 1: Thông tin tài khoản -->
+        <div class="form-row">
+            <div class="form-label">Username:</div>
+            <div class="form-input"><input type="text" name="username"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-label">Password:</div>
+            <div class="form-input"><input type="password" name="password"></div>
+        </div>
+        <div class="form-row align-top">
+            <div class="form-label">Re-type<br>Password:</div>
+            <div class="form-input"><input type="password" name="re_password"></div>
+        </div>
+
+        <hr>
+
+        <div class="form-row">
+            <div class="form-label">Birthday:</div>
+            <div class="form-input birthday-inputs">
+                <select name="birth_month">
+                    <option value="">[select one]</option>
+                </select> ,
+                <input type="text" name="birth_day"> ,
+                <input type="text" name="birth_year">
+                <span style="color: #666;">(Month Day, Year)</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-label">Images:</div>
+            <div class="form-input">
+                <input type="file" name="profile_image">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-row name-row">
+            <div class="form-label">First Name:</div>
+            <div class="form-input">
+                <input type="text" name="first_name">
+                <span class="last-name-label">Last Name:</span>
+                <input type="text" name="last_name">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-row align-top">
+            <div class="form-label">Interests (optional):</div>
+            <div class="form-input checkbox-group">
+                <label><input type="checkbox" name="interest" value="Entertainment"> Entertainment</label>
+                <label><input type="checkbox" name="interest" value="Business"> Business</label>
+                
+                <label><input type="checkbox" name="interest" value="HomeFamily"> Home & Family</label>
+                <label><input type="checkbox" name="interest" value="ComputersTech"> Computers & Technology</label>
+                
+                <label><input type="checkbox" name="interest" value="Health"> Health</label>
+                <label><input type="checkbox" name="interest" value="PersonalFinance"> Personal Finance</label>
+                
+                <label><input type="checkbox" name="interest" value="Music"> Music</label>
+                <label><input type="checkbox" name="interest" value="SmallBusiness"> Small Business</label>
+            </div>
+        </div>
+
+        <hr>
+
+        <button type="submit" class="submit-btn">REGISTER</button>
+    </form>
+</div>
+
+</body>
+</html>

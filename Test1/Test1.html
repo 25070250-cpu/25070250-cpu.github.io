@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guardian Clone - Khung cơ bản</title>
+    <style>
+        /* Thiết lập cơ bản */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Helvetica, Arial, sans-serif; background-color: #f6f6f6; color: #333; }
+        
+        /* Header và Điều hướng */
+        header { background-color: #052962; color: white; padding: 20px 40px; }
+        .logo { font-family: Georgia, serif; font-size: 2.5rem; font-weight: bold; font-style: italic; letter-spacing: -1px; }
+        nav { background-color: #ffe500; padding: 10px 40px; border-bottom: 1px solid #ccc; }
+        nav a { font-weight: bold; color: #052962; text-decoration: none; margin-right: 20px; font-size: 1.1rem; }
+        nav a:hover { text-decoration: underline; }
+
+        /* Container chính */
+        .container { max-width: 1300px; margin: 20px auto; padding: 0 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
+
+        /* Khối tin tức chính */
+        .main-news { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .hero-article { grid-column: span 2; border-top: 4px solid #c70000; padding-top: 10px; }
+        .hero-article h1 { font-family: Georgia, serif; font-size: 3rem; line-height: 1.1; margin-bottom: 15px; color: #121212; cursor: pointer; }
+        .hero-article h1:hover { color: #052962; }
+        .hero-article p { font-size: 1.1rem; line-height: 1.5; color: #444; margin-bottom: 15px; }
+        .hero-image { width: 100%; height: 400px; background-color: #ccc; object-fit: cover; }
+
+        /* Khối tin tức phụ */
+        .secondary-article { border-top: 1px solid #dcdcdc; padding-top: 10px; }
+        .secondary-article h2 { font-family: Georgia, serif; font-size: 1.5rem; margin-bottom: 10px; color: #121212; cursor: pointer; }
+        .secondary-article h2:hover { color: #052962; }
+
+        /* Cột bên phải (Ý kiến / Bình luận) */
+        .sidebar { background-color: #fdfae5; padding: 20px; border-top: 4px solid #e27000; }
+        .sidebar h3 { font-family: Helvetica, Arial, sans-serif; font-size: 1.2rem; color: #c70000; margin-bottom: 15px; text-transform: uppercase; }
+        .opinion-piece { margin-bottom: 20px; border-bottom: 1px dotted #ccc; padding-bottom: 15px; }
+        .opinion-piece h4 { font-family: Georgia, serif; font-size: 1.3rem; color: #052962; cursor: pointer; }
+        .opinion-piece h4:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .hero-article h1 { font-size: 2rem; }
+        }
+        @media (max-width: 600px) {
+            .main-news { grid-template-columns: 1fr; }
+            .hero-article { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">The Guardian Clone</div>
+    </header>
+
+    <nav>
+        <a href="#">News</a>
+        <a href="#">Opinion</a>
+        <a href="#">Sport</a>
+        <a href="#">Culture</a>
+        <a href="#">Lifestyle</a>
+    </nav>
+
+    <div class="container">
+        <main class="main-news">
+            <article class="hero-article">
+                <h1>Hệ thống chính trị toàn cầu đối mặt với biến động lớn chưa từng có</h1>
+                <p>Một bản tóm tắt sắc sảo về tình hình hiện tại, tập trung vào các sự kiện diễn ra ở Châu Âu và tác động trực tiếp của nó đến thị trường kinh tế thế giới.</p>
+                <img src="https://via.placeholder.com/800x400" alt="Ảnh minh họa" class="hero-image">
+            </article>
+
+            <article class="secondary-article">
+                <h2>Báo cáo môi trường: Băng tan ở Bắc Cực đang tăng tốc</h2>
+                <p>Nghiên cứu mới nhất chỉ ra những dữ liệu đáng báo động về nhiệt độ đại dương.</p>
+            </article>
+
+            <article class="secondary-article">
+                <h2>Thị trường công nghệ: Cổ phiếu AI tiếp tục lao dốc</h2>
+                <p>Bong bóng công nghệ đang có dấu hiệu chững lại sau chuỗi ngày tăng trưởng nóng.</p>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Opinion</h3>
+            <div class="opinion-piece">
+                <h4>Chúng ta đang hiểu sai về cách AI định hình tương lai công việc</h4>
+                <p style="font-size: 0.9rem; margin-top: 5px; color: #666;">Bởi Chuyên gia Phân tích</p>
+            </div>
+            <div class="opinion-piece">
+                <h4>Tại sao quy hoạch đô thị hiện đại lại thất bại trong việc kết nối con người?</h4>
+                <p style="font-size: 0.9rem; margin-top: 5px; color: #666;">Bởi Kiến trúc sư ẩn danh</p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
